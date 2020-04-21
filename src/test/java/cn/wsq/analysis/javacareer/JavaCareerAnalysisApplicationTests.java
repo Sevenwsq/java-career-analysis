@@ -1,5 +1,6 @@
 package cn.wsq.analysis.javacareer;
 
+import cn.wsq.analysis.javacareer.controller.MessageController;
 import cn.wsq.analysis.javacareer.pojo.Position;
 import cn.wsq.analysis.javacareer.service.PositionService;
 import cn.wsq.analysis.javacareer.utils.CrawUtils;
@@ -7,13 +8,12 @@ import com.alibaba.excel.EasyExcel;
 import com.alibaba.excel.ExcelWriter;
 import com.alibaba.excel.write.metadata.WriteSheet;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import javax.annotation.Resource;
 import java.io.IOException;
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicInteger;
 
 @SpringBootTest
@@ -78,6 +78,11 @@ class JavaCareerAnalysisApplicationTests {
 //        excelWriter.write(data(), writeSheet);
         // 千万别忘记finish 会帮忙关闭流
 //        excelWriter.finish();
+    }
+    @Autowired
+    MessageController messageController;
+    @Test
+    void testSend() throws IOException {
     }
 
 }
